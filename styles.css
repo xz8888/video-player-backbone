@@ -1,0 +1,518 @@
+@charset "utf-8";
+
+/* CSS Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 1. GENERAL LAYOUT AND DESIGN */
+
+body {
+	padding: 0;
+	margin: 0;
+	height: 100%
+	overflow: hidden;
+  background-color: black;
+}
+
+#content-wrapper {
+	min-width: 900px;
+	display: block;
+	overflow: hidden;
+  background-color: black;
+}
+
+#content-left-resize {
+	width: 7px;
+	background: #e5e5e5 url('images/sidebar-resize-bg.png') repeat-y;
+	float: right;
+	clear: right;
+	display: block;
+}
+
+#content-left {
+	min-width: 200px;
+	float: left;
+	background: #fff;
+	border-right: 1px solid #c1c1c1;
+	color: #363636;
+}
+
+#sidebar-header {
+	background: #e5e5e5;
+	height: 60px;
+	text-transform: uppercase;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+#sidebar-header h2 {
+	padding: 22px 0 22px 15px;
+	text-align: left;
+	float: left;
+}
+
+#sidebar-resizer {
+	background: url('images/resizer.png') no-repeat;
+	width: 20px;
+	height: 20px;
+	padding-right: 5px;
+	cursor: pointer;
+	overflow: hidden;
+	cursor: e-resize;
+	display: block;
+	float: right;
+	top: 18px;
+	position: relative;
+}
+
+#sidebar-content {
+	width: 193px;
+	position: relative;
+	padding: 20px 0 20px 10px;
+	overflow-y: scroll;
+	overflow-x: auto;
+	line-height: 16px;
+	margin-right: 0;
+	float: left;
+	border-top: 1px solid #c1c1c1;
+  -webkit-overflow-scrolling: touch;
+}	
+
+.accordion-row a.section-title {
+	font-weight: bold;
+	margin: 3px 0;
+	display: block;
+	padding-left: 32px;
+	text-indent: -20px;
+	background: url('images/arrow.png') 0 -48px no-repeat;
+}
+
+.accordion-row.closed a.section-title {
+  background-position: 0 3px;
+}
+
+.accordion-row.closed ul {
+  display: none;
+}
+
+.accordion-row ul {
+	margin: 6px 0 12px;
+}
+
+.accordion-row ul li {
+	margin: 6px 5px 6px 10px;
+	padding-left: 20px;
+}
+
+.accordion-row ul li.selected {
+	color: #ff9900;
+	font-weight: bold;
+	background: url('images/arrow-selected.png') 2px 4px no-repeat;
+}
+
+#content-left ul li.selected a {
+	color: #ff9900;
+	font-weight: bold;
+}
+
+#content-main {
+	float: left;
+  overflow: hidden;
+  background-color: black;
+}
+
+#content-main-top {
+	background: #3087b4 url('images/header-bg.png') repeat-x;
+	height: 60px;
+	display: block;
+	width: 100%;
+	position: fixed;
+	border-bottom: 1px solid #363636;
+	color: #fff;
+	top: 0;
+	min-width: 640px;
+}
+
+#content-main-top-left {
+	min-width: 120px;
+	padding-top: 10px;
+	float: left;
+  position: relative;
+  top: -40px;
+}
+
+#action-button {
+	padding: 10px 0 10px 20px;
+	font-weight: bold;
+	width: 120px;
+	height: 20px;
+	overflow: visible;
+	white-space: nowrap;
+  position: relative;
+  top: -100px;
+  opacity: 0;
+}
+
+#action-button a {
+  text-decoration: underline;
+}
+
+#content-main-top-center {
+	min-width: 400px;
+	padding-top: 10px;
+	float: left;
+	text-align: center;
+	width: 100%;
+}
+
+#presentation-title {
+	font-size: 16px;
+	margin-top: 4px;
+	font-weight: bold;
+}
+
+#content-main-top-right {
+	min-width: 120px;
+	padding-top: 22px;
+  padding-right: 20px;
+	float: right;
+  position: relative;
+  top: -45px;
+}
+
+#maximize-button {
+	background: #00688c url('images/maximize-button.png') 0 0 no-repeat;
+	width: 109px;
+	height: 36px;
+	display: block;
+	text-indent: -9999px;
+	cursor: pointer;
+}
+
+#maximize-button.minimize {
+  background-image: url('images/restore-button.png');
+}
+
+#maximize-button:hover {
+	background-position: 0 -36px;
+}
+
+#maximize-button:active {
+	background-position: 0 -72px;
+}
+
+/* Middle Region */
+
+#content-main-middle {
+	padding-top: 0;
+	position: fixed;
+	top: 61px;
+  background-color: black;
+}
+
+#video-container {
+  background-color: black;
+}
+
+#video {
+	background-color: black;
+}
+
+#video object {
+  background: black;
+}
+
+#survey {
+  background: black;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: white;
+  display: none;
+}
+#survey-unsupported {
+  display: none;
+  position: relative;
+}
+
+#video_wrapper {
+  width: 100% !important;
+}
+
+/* Bottom Region */
+
+#content-main-bottom {
+	background-color: #252525;
+	width: 100%;
+	border-top: 1px solid #363636;
+	color: #e1e1e1;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+}
+
+#player-controls-wrapper {
+	float: left;
+  width: 100%;
+}
+
+#player-controls-top {
+	height: 14px;
+	padding: 6px 18px;
+}
+
+#player-time {
+	float: left;
+	width: 80px;
+}
+
+#progress-bar {
+	background: #000;
+	height: 5px;
+	margin-top: 3px;
+	border: 1px solid #363636;
+  margin-left: 55px;
+}
+
+#progress-bar .buffer-progress {
+  background-image: none;
+  background-color: #5C631B;
+}
+
+#player-controls-bottom {
+	height: 36px;
+	padding: 0;
+	min-width: 640px;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+#player-controls-bottom-left {
+	float: left;
+  width: 0;
+}
+
+#toc-toggle {
+	background: url('images/toc-toggle.png');
+	text-indent: -9999px;
+	width: 150px;
+	height: 26px;
+	cursor: pointer;
+	overflow: hidden;
+  margin-left: 10px;
+}
+#toc-toggle:hover {
+	background-position: 0 -26px;
+}
+
+#toc-toggle:active {
+	background-position: 0 -52px;
+}
+#toc-toggle.show {
+  background-position: 150px 0;
+}
+#toc-toggle.show:hover {
+	background-position: 150px -26px;
+}
+
+#toc-toggle.show:active {
+	background-position: 150px -52px;
+}
+#player-controls-bottom-center {
+	min-width: 400px;
+	text-align: center;
+  padding-top: 2px;
+}
+
+#player-controls-bottom-center div {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-indent: -9999px;
+	vertical-align: middle;
+	cursor: pointer;
+	margin: 0 15px;
+}
+
+#player-controls-bottom-center div:hover {
+	background-position-y: -30px;
+}
+
+#player-controls-bottom-center div:active {
+	background-position-y: -60px;
+}
+
+#player-previous {
+	background: url('images/player-controls.png') 0 0 no-repeat;
+}
+
+#player-playpause {
+	background: url('images/player-controls.png') -30px 0 no-repeat;
+}
+
+#player-playpause.pause {
+	background: url('images/player-controls.png') -60px 0 no-repeat;
+}
+
+#player-next {
+	background: url('images/player-controls.png') -90px 0 no-repeat;
+}
+#player-controls-bottom-right {
+	min-width: 240px;
+	float: right;
+}
+/* Hide volume controls on mobile */
+.mobile #player-controls-bottom-right {
+  display: none;
+}
+
+#player-volume {
+	float: left;
+	display: block;
+}
+
+#volume-controls {
+	background: url('images/volume-controls.png');
+  background-position: 30px 0;
+	text-indent: -9999px;
+	width: 30px;
+	height: 20px;
+	cursor: pointer;
+  position: relative;
+  top: -30px;
+  float: left;
+}
+#volume-controls:hover {
+	background-position-y: -30px;
+}
+
+#volume-controls:active {
+	background-position-y: -60px;
+}
+
+#volume-bar {
+	width: 180px;
+  margin-left: 10px;
+  position: relative;
+  top: -25px;
+  float: right;
+  height: 5px;
+  margin-top: 3px;
+  background: #000;
+  border: 1px solid #363636;
+}
+
+#volume-controls.mute {
+  background-position-x: 0;
+}
+
+#cc-toggle {
+	background: url('images/cc-toggle.png');
+	text-indent: -9999px;
+	width: 40px;
+	height: 26px;
+	cursor: pointer;
+	overflow: hidden;
+}
+#cc-toggle:hover {
+	background-position-y: -26px;
+}
+
+#cc-toggle:active {
+	background-position-y: -52px;
+}
+
+.ui-slider-handle {
+  top: -.45em !important;
+}
+
+.mobile .ui-slider-handle {
+  top: -.46em !important;
+}
+
+/* Hide normal JWPlayer controlbar, but keep the play button on top of the video */
+#jwplayer-wrapper_controlbar {
+  display: none !important;
+}
+
+/* 2. TYPOGRAPHY */
+
+body {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	color: #363636;
+}
+
+a {
+	color: #ebebeb;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+#content-left a {
+	color: #363636;
+}
+
+#content-left a:hover {
+	color: #252525;
+}
+
+#survey p {
+  font-size: 16pt;
+  padding: 20px;
+}
+
+#survey a {
+  font-size: 12pt;
+}
+
+#survey-links {
+  position: relative;
+}

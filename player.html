@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title></title>
+    <meta name="viewport" content="user-scalable=no">
+    <script src="http://code.jquery.com/jquery-1.6.4.js" type="text/javascript"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js" type="text/javascript"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js" type="text/javascript"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.string/2.3.0/underscore.string.min.js" type="text/javascript"></script>
+     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js" text="text/javascript"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.5.3/backbone-min.js" type="text/javascript"></script>
+    <script src="dependencies/jquery.ui.touch-punch.min.js"></script>
+    <script src="dependencies/flash_detect_min.js"></script>
+    <script src="dependencies/jwplayer/jwplayer.js"></script>
+    <link rel="stylesheet" href="vendor/jquery-ui/css/custom-theme/jquery-ui-1.8.16.custom.css" type="text/css" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="ie7.css" type="text/css" />
+    <![endif]-->
+    <script type="text/template" id="template-TableOfContentsChapter">
+      <div class="accordion-row"><a href="#" class="section-title"><%= chapter.number %><%= chapter.title %></a>
+        <div><ul>
+          <%= sections %>
+        </ul></div>
+      </div>
+    </script>
+    <script type="text/template" id="template-TableOfContentsSection">
+      <li rel="<%= section.id %>"><a href="#"><%= section.title %></a></li>
+    </script>
+  </head>
+  <body>
+    <div id="content-wrapper">
+      <div id="content-left">
+        <div id="sidebar-header" class="resize-container">
+          <h2 class="title">Table of Contents</h2>
+          <div id="sidebar-resizer">&nbsp;</div>
+        </div>
+        <div id="sidebar-content" class="resize-container"></div>
+      </div>
+      <div id="content-main">
+        <div id="content-main-top" class="resize-container">
+          <div id="content-main-top-center">
+            <div id="presentation-section-title"></div>
+            <div id="presentation-title"></div>
+          </div>
+        
+          <div id="content-main-top-left">
+            <div id="action-button"><a href="sept_expenses.xls" target="_blank">Open "<span class="label">Sept_Expenses.xls</span>"</a></div>
+          </div>
+
+          <div id="content-main-top-right">
+            <span class="fullscreen-key">Press <span class="key">F11</span> for Fullscreen</span>
+          </div>
+        </div>
+          
+        <div id="content-main-middle" class="resize-container">
+          <div id="video-container">
+            <div id="survey">
+              <div id="survey-links">
+                <p class="description">Thank you for watching this course</p>
+                <a class="survey-link">Complete the survey</a>
+              </div>
+              <div id="survey-unsupported">
+                <p class="description">Video course quizzes are currently not supported on mobile devices. Please login to the PD Net website on your computer to complete this quiz. (You do not need to watch the video course again to complete the quiz.)</p>
+              </div>
+            </div>
+            <div id="video"></div>
+          </div>
+        </div>
+            
+        <div id="content-main-bottom" class="resize-container">
+          <div id="player-controls-wrapper">
+            <div id="player-controls-top">
+              <div id="player-time">00:00</div>
+              <div id="progress-bar"></div>
+            </div>
+              
+            <div id="player-controls-bottom">
+              <div id="player-controls-bottom-left">
+                <div id="toc-toggle" class="button">Hide table of contents</div>
+              </div>
+              <div id="player-controls-bottom-center">
+                <div id="player-previous">Previous</div>
+                <div id="player-playpause">Play / Pause</div>
+                <div id="player-next">Next</div>
+              </div>
+              <div id="player-controls-bottom-right">
+                <div id="player-volume">
+                  <div id="volume-controls">Volume</div>
+                  <div id="volume-bar"><div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="dialog" style="display:none;">
+      <br />
+      <br />
+      <br />
+      <p>
+       Your browser is currently not supported. Try to use another browser or click  <a style="line-height: 30px; text-decoration: underline;" target="_blank" href="http://www.cga-pdnet.org/Videos/SystemTest.htm">here</a> to check the list of available browsers 
+      </p>
+    </div>
+
+
+    <script src="utils.js"></script>
+    <script src="settings.js"></script>
+    <script src="debug.js"></script>
+    <script src="models.js"></script>
+    <script src="video.js"></script>
+    <script src="videoPlugins.js"></script>
+    <script src="tableOfContents.js"></script>
+    <script src="views.js"></script>
+    <script src="init.js"></script>
+  </body>
+</html>

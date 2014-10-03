@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="vendor/jquery-ui/css/custom-theme/jquery-ui-1.8.16.custom.css" type="text/css" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="ie7.css" type="text/css" />
+    <![endif]-->
+    <script src="/Courses/Shared/launchquiz.js"></script>
+    <script type="text/template" id="template-TableOfContentsChapter">
+      <div class="accordion-row"><a href="#" class="section-title"><%= chapter.number %><%= chapter.title %></a>
+        <div><ul>
+          <%= sections %>
+        </ul></div>
+      </div>
+    </script>
+    <script type="text/template" id="template-TableOfContentsSection">
+      <li rel="<%= section.id %>"><a href="#"><%= section.title %></a></li>
+    </script>
+  </head>
+  <body>
+    <div id="content-wrapper">
+      <div id="content-left">
+        <div id="sidebar-header" class="resize-container">
+          <h2 class="title">Table of Contents</h2>
+          <div id="sidebar-resizer">&nbsp;</div>
+        </div>
+        <div id="sidebar-content" class="resize-container"></div>
+      </div>
+      <div id="content-main">
+        <div id="content-main-top" class="resize-container">
+          <div id="content-main-top-center">
+            <div id="presentation-section-title"></div>
+            <div id="presentation-title"></div>
+          </div>
+        
+          <div id="content-main-top-left">
+            <div id="action-button"><a href="sept_expenses.xls" target="_blank">Open "<span class="label">Sept_Expenses.xls</span>"</a></div>
+          </div>
+
+          <div id="content-main-top-right">
+            <span class="fullscreen-key">Press <span class="key">F11</span> for Fullscreen</span>
+          </div>
+        </div>
+          
+        <div id="content-main-middle" class="resize-container">
+          <div id="video-container">
+            <div id="survey">
+              <div id="survey-links">
+                <p class="description">Thank you for watching this course</p>
+                <a class="survey-link">Complete the survey</a>
+              </div>
+              <div id="survey-unsupported">
+                <p class="description">Video course quizzes are currently not supported on mobile devices. Please login to the PD Net website on your computer to complete this quiz. (You do not need to watch the video course again to complete the quiz.)</p>
+              </div>
+            </div>
+            <div id="video"></div>
+          </div>
+        </div>
+            
+        <div id="content-main-bottom" class="resize-container">
+          <div id="player-controls-wrapper">
+            <div id="player-controls-top">
+              <div id="player-time">00:00</div>
+              <div id="progress-bar"></div>
+            </div>
+              
+            <div id="player-controls-bottom">
+              <div id="player-controls-bottom-left">
+                <div id="toc-toggle" class="button">Hide table of contents</div>
+              </div>
+              <div id="player-controls-bottom-center">
+                <div id="player-previous">Previous</div>
+                <div id="player-playpause">Play / Pause</div>
+                <div id="player-next">Next</div>
+              </div>
+              <div id="player-controls-bottom-right">
+                <div id="player-volume">
+                  <div id="volume-controls">Volume</div>
+                  <div id="volume-bar"><div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="dependencies.js"></script>
+    <script src="video_player.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+#sidebar-header {
+  width: 202px;
+}
+
+#player-previous {
+  position: relative;
+  left: -60px;
+}
+
+#player-playpause {
+  position: relative;
+  top: -30px;
+}
+
+#player-next {
+  position: relative;
+  top: -60px;
+  left: 60px;
+}
+
+#player-controls-bottom-center {
+  width: 55px;
+}
+
+#player-controls-bottom-right {
+  position: relative;
+  top: -60px;
+  width: 225px;
+}
+
+#volume-bar {
+  left: -20px;
+}
+
+#progress-bar .ui-slider-range {
+  height: 5px;
+}
